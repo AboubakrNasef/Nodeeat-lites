@@ -1,7 +1,6 @@
-import { ITableName } from "./table-name.interface";
 import { ClassConstructor } from "../../core/interfaces/class-constructor.interface";
 
-export interface IRepository<T extends ClassConstructor & ITableName> {
+export interface IRepository<T extends ClassConstructor> {
   findById(id: number): Promise<T | null>;
   findAll(): Promise<T[]>;
   save(entity: T): Promise<T>;

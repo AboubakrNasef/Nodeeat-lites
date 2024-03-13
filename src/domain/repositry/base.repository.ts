@@ -1,10 +1,7 @@
 import { IRepository } from "./interfaces/repository.interface";
-import { ITableName } from "./interfaces/table-name.interface";
 import { ClassConstructor } from "../core/interfaces/class-constructor.interface";
 
-export class Repository<T extends ClassConstructor & ITableName>
-  implements IRepository<T>
-{
+export class Repository<T extends ClassConstructor> implements IRepository<T> {
   private constructor(
     private readonly entity: T,
     private readonly dbContext: any
